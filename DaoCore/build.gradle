@@ -1,4 +1,5 @@
 apply plugin: 'java'
+apply plugin: 'maven-publish'
 
 group = 'org.greenrobot'
 archivesBaseName = 'greendao'
@@ -53,10 +54,10 @@ task sourcesJar(type: Jar) {
 
 artifacts {
     // jar added by Java plugin.
-    archives javadocJar
-    archives sourcesJar
+    //archives javadocJar
+    //archives sourcesJar
 }
-
+/*
 uploadArchives {
     repositories {
         mavenDeployer {
@@ -73,6 +74,27 @@ uploadArchives {
                     }
                 }
             }
+        }
+    }
+}*/
+
+publishing {
+    repositories {
+        maven {
+        	def releasesRepoUrl = "http://repo.itacyl.es/archiva/repository/internal/"
+            def snapshotsRepoUrl = "http://repo.itacyl.es/archiva/repository/snapshots/"
+            url version.endsWith("SNAPSHOT") ? snapshotsRepoUrl : releasesRepoUrl
+            credentials {
+                username = mavenUser
+                password = mavenPassword
+            }
+        }
+    }
+
+    publications {
+        api(MavenPublication) {
+            from components.java
+            artifactId 'greendao'
         }
     }
 }
