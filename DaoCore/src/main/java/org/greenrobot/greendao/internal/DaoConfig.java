@@ -32,23 +32,40 @@ import org.greenrobot.greendao.identityscope.IdentityScopeType;
 /**
  * Internal class used by greenDAO. DaoConfig stores essential data for DAOs, and is hold by AbstractDaoMaster. This
  * class will retrieve the required information from the DAO classes.
+ * 
+ * gusriobr: removed "final" classifier to allow subclassing.
  */
-public final class DaoConfig implements Cloneable {
+public class DaoConfig implements Cloneable {
 
-    public final Database db;
-    public final String tablename;
-    public final Property[] properties;
+    public Database db;
+    public String tablename;
+    public Property[] properties;
 
-    public final String[] allColumns;
-    public final String[] pkColumns;
-    public final String[] nonPkColumns;
+    public String[] allColumns;
+    public String[] pkColumns;
+    public String[] nonPkColumns;
 
     /** Single property PK or null if there's no PK or a multi property PK. */
-    public final Property pkProperty;
-    public final boolean keyIsNumeric;
-    public final TableStatements statements;
+    public Property pkProperty;
+    public boolean keyIsNumeric;
+    public TableStatements statements;
 
     private IdentityScope<?, ?> identityScope;
+    
+    /**
+     * gusriobr: default constructor to allow subclassing
+     */
+    public DaoConfig() {
+    	db = null;
+    	tablename = null;
+    	properties = null;
+    	allColumns = null;
+    	pkColumns = null;
+    	nonPkColumns = null;
+    	pkProperty = null;
+    	keyIsNumeric = false;
+    	statements = null;
+    }
 
     public DaoConfig(Database db, Class<? extends AbstractDao<?, ?>> daoClass) {
         this.db = db;
