@@ -1,5 +1,5 @@
 // Sub projects may reference rootProject.version
-version = '3.2.3-SNAPSHOT'
+version = '3.2.3-patched-SNAPSHOT'
 
 wrapper {
     distributionType = Wrapper.DistributionType.ALL
