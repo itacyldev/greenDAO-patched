@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="DaoTest/src/androidTest/java"/>
+	<classpathentry kind="src" path="DaoTest/src/test/java"/>
+	<classpathentry kind="src" path="DaoTestBase/src/main/java"/>
+	<classpathentry kind="src" path="DaoTestEntityAnnotation/src/androidTest/java"/>
+	<classpathentry kind="src" path="DaoTestEntityAnnotation/src/main/java"/>
+	<classpathentry kind="src" path="DaoTestGenerator/src"/>
+	<classpathentry kind="src" path="DaoTestPerformance/src/androidTest/java"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
