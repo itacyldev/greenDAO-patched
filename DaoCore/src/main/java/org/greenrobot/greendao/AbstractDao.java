@@ -831,7 +831,7 @@ public abstract class AbstractDao<T, K> {
      * @param key    Needed only for identity scope, pass null if there's none.
      * @param entity The entitiy to attach
      */
-    protected final void attachEntity(K key, T entity, boolean lock) {
+    protected void attachEntity(K key, T entity, boolean lock) {
         attachEntity(entity);
         if (identityScope != null && key != null) {
             if (lock) {

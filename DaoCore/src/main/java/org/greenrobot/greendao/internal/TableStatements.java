@@ -23,16 +23,16 @@ import org.greenrobot.greendao.database.DatabaseStatement;
 // Note: avoid locking while compiling any statement (accessing the db) to avoid deadlocks on lock-savvy DBs like
 // SQLCipher.
 public class TableStatements {
-    private final Database db;
-    private final String tablename;
-    private final String[] allColumns;
-    private final String[] pkColumns;
+	protected final Database db;
+    protected final String tablename;
+    protected final String[] allColumns;
+    protected final String[] pkColumns;
 
-    private DatabaseStatement insertStatement;
-    private DatabaseStatement insertOrReplaceStatement;
-    private DatabaseStatement updateStatement;
-    private DatabaseStatement deleteStatement;
-    private DatabaseStatement countStatement;
+    protected DatabaseStatement insertStatement;
+    protected DatabaseStatement insertOrReplaceStatement;
+    protected DatabaseStatement updateStatement;
+    protected DatabaseStatement deleteStatement;
+    protected DatabaseStatement countStatement;
 
     private volatile String selectAll;
     private volatile String selectByKey;
